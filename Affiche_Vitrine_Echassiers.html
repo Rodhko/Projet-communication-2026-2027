@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Affiche Vitrine 2 — Les Échassiers</title>
+<style>
+  @page { size: A3 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: 'Segoe UI', Arial, 'Helvetica Neue', sans-serif; color: #22303a; background: #fff; }
+  .page { width: 297mm; height: 420mm; overflow: hidden; position: relative;
+          background: radial-gradient(circle at 80% 0%, #f0fbf4, var(--bg) 60%); }
+  .inner { padding: 12mm 16mm; }
+
+  header { background: linear-gradient(135deg, var(--dark), var(--main)); color: #fff;
+           padding: 10mm 14mm; border-radius: 6mm; position: relative; overflow: hidden; }
+  header::after { content: ""; position: absolute; right: -20mm; top: -20mm; width: 90mm; height: 90mm;
+                  border-radius: 50%; background: rgba(255,255,255,.08); }
+  .kicker { font-size: 11pt; letter-spacing: .18em; text-transform: uppercase; opacity: .85; }
+  h1 { font-size: 34pt; line-height: 1.05; margin: 2mm 0 1mm; }
+  .sub { font-size: 11.5pt; opacity: .92; max-width: 170mm; }
+
+  .intro { font-size: 12.5pt; line-height: 1.5; margin: 6mm 2mm 5mm; padding-left: 5mm;
+           border-left: 1.5mm solid var(--accent); }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-bottom: 6mm; }
+  .card { background: #fff; border-radius: 4mm; padding: 5mm 6mm; box-shadow: 0 1mm 3mm rgba(0,0,0,.09);
+          border-top: 1.6mm solid var(--main); }
+  .card h3 { font-size: 12pt; color: var(--dark); margin-bottom: 2mm; }
+  .card p { font-size: 10.5pt; line-height: 1.45; color: #3c4a52; }
+
+  h2.section { font-size: 16pt; color: var(--dark); margin: 2mm 1mm 4mm; }
+  h2.section::after { content: ""; display: block; width: 28mm; height: 1.6mm; background: var(--accent);
+                      border-radius: 1mm; margin-top: 1.5mm; }
+
+  .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4mm; }
+  .tile { background: #fff; border-radius: 3mm; overflow: hidden;
+          box-shadow: 0 1mm 2.5mm rgba(0,0,0,.11); }
+  .tile img { width: 100%; height: 27mm; object-fit: cover; display: block; }
+  .caption { padding: 1.5mm 2.5mm 2mm; font-size: 8.5pt; font-weight: 600; line-height: 1.15; color: var(--dark); }
+  .caption small { display: block; font-weight: 400; color: #5d6b74; font-size: 7.5pt; margin-top: .6mm; }
+
+  .fact { margin: 6mm 0 4mm; background: var(--accent); border-radius: 4mm; padding: 5mm 7mm;
+          display: flex; align-items: center; gap: 5mm; }
+  .fact .label { flex: 0 0 auto; background: var(--dark); color: #fff; font-weight: 700;
+                 padding: 2.5mm 4mm; border-radius: 2mm; font-size: 9pt; letter-spacing: .05em; }
+  .fact p { font-size: 12pt; line-height: 1.4; color: var(--dark); font-weight: 600; }
+
+  footer { display: flex; justify-content: space-between; align-items: center;
+           background: var(--dark); color: #eaf2f5; border-radius: 4mm; padding: 4mm 7mm; font-size: 9.5pt; }
+  footer .iucn { display: flex; gap: 4mm; align-items: center; }
+  footer .code { display: inline-block; padding: 1mm 2.5mm; border-radius: 1.5mm; font-weight: 700; font-size: 8pt; }
+  .lc { background: #4caf50; color: #fff; } .nt { background: #ff9800; color: #fff; }
+  .vu { background: #ff5722; color: #fff; } .en { background: #d32f2f; color: #fff; }
+</style>
+</head>
+<body>
+<div class="page" style="--main:#2f6d4f;--dark:#163a29;--accent:#8fd0b3;--bg:#eef7f1;">
+  <div class="inner">
+
+    <header>
+      <div class="kicker">Vitrine n° 2</div>
+      <h1>Les Échassiers</h1>
+      <p class="sub">Oiseaux des zones humides — de l'avocette au grand cormoran</p>
+    </header>
+
+    <p class="intro">Grèbes, chevaliers, harles, foulques&nbsp;: la vitrine «&nbsp;Échassier&nbsp;» réunit des oiseaux élégants,
+    souvent de longues jambes, experts pour se nourrir dans les eaux peu profondes, les vasières et les roselières.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Caractéristiques</h3>
+        <p>Longues pattes pour patauger, becs variés (longs, incurvés ou en spatule) adaptés à la recherche de nourriture, plumages souvent discrets mais parades remarquables.</p>
+      </div>
+      <div class="card">
+        <h3>Alimentation</h3>
+        <p>Insectes, vers, mollusques, crustacés et petits poissons capturés au bord de l'eau ou en plongeant.</p>
+      </div>
+      <div class="card">
+        <h3>Habitat</h3>
+        <p>Marais, vasières, berges de lacs et d'étangs, prairies inondées et roselières.</p>
+      </div>
+    </div>
+
+    <h2 class="section">Les espèces de la vitrine</h2>
+    <div class="gallery">
+
+      <figure class="tile">
+        <img src="images/avocette_elegante_m.jpg" alt="Avocette élégante">
+        <figcaption class="caption">Avocette élégante<small>Bec recourbé vers le haut</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/grebe_a_cou_noir_f.jpg" alt="Grèbe à cou noir">
+        <figcaption class="caption">Grèbe à cou noir<small>Femelle</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/grebe_castagneux_2_m.jpg" alt="Grèbe castagneux">
+        <figcaption class="caption">Grèbe castagneux<small>Mâle — le plus petit grèbe</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/grebe_huppe_2_f.jpg" alt="Grèbe huppé">
+        <figcaption class="caption">Grèbe huppé<small>Femelle — célèbre parade nuptiale</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/grebe_jougris_f.jpg" alt="Grèbe jougris">
+        <figcaption class="caption">Grèbe jougris<small>Femelle</small></figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/barge_noir_1.jpg" alt="Barge noire">
+        <figcaption class="caption">Barge noire<small>Limicole des vasières</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/chevalier_arlequin.jpg" alt="Chevalier arlequin">
+        <figcaption class="caption">Chevalier arlequin<small>Petit limicole pieds jaunes</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/chevalier_combattant_f.jpg" alt="Chevalier combattant">
+        <figcaption class="caption">Chevalier combattant<small>Femelle</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/chevalier_cul_blanc.jpg" alt="Chevalier cul-blanc">
+        <figcaption class="caption">Chevalier cul-blanc<small>Tache blanche au-dehors de la queue</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/chevalier_gambette.jpg" alt="Chevalier gambette">
+        <figcaption class="caption">Chevalier gambette<small>Pattes rouges</small></figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/chevalier_guignette.jpg" alt="Chevalier guignette">
+        <figcaption class="caption">Chevalier guignette<small>Hoche la queue sans cesse</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/martin_pecheur.jpg" alt="Martin-pêcheur">
+        <figcaption class="caption">Martin-pêcheur d'Europe<small>Plonge et avale ses poissons tête la première</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/harle_bievre_1.jpg" alt="Harle bièvre">
+        <figcaption class="caption">Harle bièvre<small>Canard plongeur à bec étroit</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/harle_huppe.jpg" alt="Harle huppé">
+        <figcaption class="caption">Harle huppé<small>Longue huppe à l'arrière de la tête</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/becassine_des_bois.jpg" alt="Bécassine des bois">
+        <figcaption class="caption">Bécassine des bois<small>Long bec sensible pour fouiller la vase</small></figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/foulque_m.jpg" alt="Foulque macroule">
+        <figcaption class="caption">Foulque macroule<small>Front blanc et pattes lobées</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/gallinule_poule_d_eau_m.jpg" alt="Gallinule poule-d'eau">
+        <figcaption class="caption">Gallinule poule-d'eau<small>Mâle — poule d'eau</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/pluvier_dore_f.jpg" alt="Pluvier doré">
+        <figcaption class="caption">Pluvier doré<small>Femelle — plumage tacheté d'or</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/rale_d_eau_jeune.jpg" alt="Râle d'eau">
+        <figcaption class="caption">Râle d'eau<small>Jeune — très discret dans les roselières</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/vanneau_huppe.jpg" alt="Vanneau huppé">
+        <figcaption class="caption">Vanneau huppé<small>Huppe noire et reflets verts</small></figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/grand_cormoran_2.jpg" alt="Grand cormoran">
+        <figcaption class="caption">Grand cormoran<small>Sèche ses ailes au soleil</small></figcaption>
+      </figure>
+
+    </div>
+
+    <div class="fact">
+      <span class="label">LE SAVIEZ-VOUS&nbsp;?</span>
+      <p>L'avocette élégante capture sa nourriture en balayant son bec incurvé de gauche à droite dans la vase,
+      un peu comme un détecteur de métaux&nbsp;!</p>
+    </div>
+
+    <footer>
+      <span>Tous ces oiseaux sont des <strong>espèces protégées</strong> en France. Les zones humides, les vasières et les roselières sont essentielles à leur survie.</span>
+      <span class="iucn">
+        <span>Statuts UICN&nbsp;:</span>
+        <span class="code lc">LC</span><span class="code nt">NT</span><span class="code vu">VU</span>
+      </span>
+    </footer>
+
+  </div>
+</div>
+</body>
+</html>

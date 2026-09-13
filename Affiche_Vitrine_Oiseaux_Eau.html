@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Affiche Vitrine 1 — Les Oiseaux d'eau</title>
+<style>
+  @page { size: A3 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: 'Segoe UI', Arial, 'Helvetica Neue', sans-serif; color: #22303a; background: #fff; }
+  .page { width: 297mm; height: 420mm; overflow: hidden; position: relative;
+          background: radial-gradient(circle at 80% 0%, #eafaff, var(--bg) 60%); }
+  .inner { padding: 12mm 16mm; }
+
+  header { background: linear-gradient(135deg, var(--dark), var(--main)); color: #fff;
+           padding: 10mm 14mm; border-radius: 6mm; position: relative; overflow: hidden; }
+  header::after { content: ""; position: absolute; right: -20mm; top: -20mm; width: 90mm; height: 90mm;
+                  border-radius: 50%; background: rgba(255,255,255,.08); }
+  .kicker { font-size: 11pt; letter-spacing: .18em; text-transform: uppercase; opacity: .85; }
+  h1 { font-size: 34pt; line-height: 1.05; margin: 2mm 0 1mm; }
+  .sub { font-size: 11.5pt; opacity: .92; max-width: 170mm; }
+
+  .intro { font-size: 12.5pt; line-height: 1.5; margin: 6mm 2mm 5mm; padding-left: 5mm;
+           border-left: 1.5mm solid var(--accent); }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-bottom: 6mm; }
+  .card { background: #fff; border-radius: 4mm; padding: 5mm 6mm; box-shadow: 0 1mm 3mm rgba(0,0,0,.09);
+          border-top: 1.6mm solid var(--main); }
+  .card h3 { font-size: 12pt; color: var(--dark); margin-bottom: 2mm; }
+  .card p { font-size: 10.5pt; line-height: 1.45; color: #3c4a52; }
+
+  h2.section { font-size: 16pt; color: var(--dark); margin: 2mm 1mm 4mm; }
+  h2.section::after { content: ""; display: block; width: 28mm; height: 1.6mm; background: var(--accent);
+                      border-radius: 1mm; margin-top: 1.5mm; }
+
+  .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4mm; }
+  .tile { background: #fff; border-radius: 3mm; overflow: hidden;
+          box-shadow: 0 1mm 2.5mm rgba(0,0,0,.11); }
+  .tile img { width: 100%; height: 30mm; object-fit: cover; display: block; }
+  .caption { padding: 1.6mm 2.5mm 2mm; font-size: 8.5pt; font-weight: 600; line-height: 1.15; color: var(--dark); }
+  .caption small { display: block; font-weight: 400; color: #5d6b74; font-size: 7.5pt; margin-top: .6mm; }
+  .tile.placeholder { border: 0.7mm dashed var(--main); background: #fff; min-height: 42mm;
+                      display: flex; align-items: center; justify-content: center; text-align: center;
+                      padding: 3mm; }
+  .tile.placeholder .ph { font-size: 9.5pt; font-weight: 600; color: var(--dark); }
+  .tile.placeholder .ph-note { display: block; font-size: 7pt; font-weight: 400; color: #7d8a92; margin-top: 2mm; }
+
+  .fact { margin: 6mm 0 4mm; background: var(--accent); border-radius: 4mm; padding: 5mm 7mm;
+          display: flex; align-items: center; gap: 5mm; }
+  .fact .label { flex: 0 0 auto; background: var(--dark); color: #fff; font-weight: 700;
+                 padding: 2.5mm 4mm; border-radius: 2mm; font-size: 9pt; letter-spacing: .05em; }
+  .fact p { font-size: 12pt; line-height: 1.4; color: var(--dark); font-weight: 600; }
+
+  footer { display: flex; justify-content: space-between; align-items: center;
+           background: var(--dark); color: #eaf2f5; border-radius: 4mm; padding: 4mm 7mm; font-size: 9.5pt; }
+  .credits { font-size: 7.5pt; color: #7d8a92; text-align: center; margin: 2mm 0 2mm; }
+  footer .iucn { display: flex; gap: 4mm; align-items: center; }
+  footer .code { display: inline-block; padding: 1mm 2.5mm; border-radius: 1.5mm; font-weight: 700; font-size: 8pt; }
+  .lc { background: #4caf50; color: #fff; } .nt { background: #ff9800; color: #fff; }
+  .vu { background: #ff5722; color: #fff; } .en { background: #d32f2f; color: #fff; }
+</style>
+</head>
+<body>
+<div class="page" style="--main:#1f6f8b;--dark:#0e3c4d;--accent:#7fd0e8;--bg:#eaf6fb;">
+  <div class="inner">
+
+    <header>
+      <div class="kicker">Vitrine n° 1</div>
+      <h1>Les Oiseaux d'eau</h1>
+      <p class="sub">Canards, sarcelles et bernaches — la grande famille des anatidés</p>
+    </header>
+
+    <p class="intro">Canards, sarcelles, fuligules&nbsp;: la vitrine «&nbsp;Oiseaux d'eau&nbsp;» met en scène la grande famille des
+    <strong>anatidés</strong>. Pieds palmés, plumage imperméable et silhouette fuselée&nbsp;: ils sont parfaitement adaptés
+    à la vie sur les étangs, les canaux et les plans d'eau.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Caractéristiques</h3>
+        <p>Pieds palmés pour nager, corps hydrodynamique, plumage imperméable grâce à la glande uropygienne, bec aplati adapté au filtrage.</p>
+      </div>
+      <div class="card">
+        <h3>Alimentation</h3>
+        <p>Régime omnivore&nbsp;: plantes aquatiques, graines, insectes, mollusques et petits poissons.</p>
+      </div>
+      <div class="card">
+        <h3>Habitat</h3>
+        <p>Étangs, lacs, rivières et zones humides, fréquentés toute l'année ou pendant les grandes migrations.</p>
+      </div>
+    </div>
+
+    <h2 class="section">Les espèces de la vitrine</h2>
+    <div class="gallery">
+
+      <figure class="tile">
+        <img src="images/canard_morillon.jpg" alt="Canard morillon">
+        <figcaption class="caption">Canard morillon<small>Mâle &amp; femelle — canard plongeur</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/canard_chipeau.jpg" alt="Canard chipeau">
+        <figcaption class="caption">Canard chipeau<small>Canard de surface</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/sarcelle_hiver.jpg" alt="Sarcelle d'hiver">
+        <figcaption class="caption">Sarcelle d'hiver<small>Mâle &amp; femelle — le plus petit canard d'Europe</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/sarcelle_ete.jpg" alt="Sarcelle d'été">
+        <figcaption class="caption">Sarcelle d'été<small>Mâle &amp; femelle</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/canard_milouin.jpg" alt="Canard milouin">
+        <figcaption class="caption">Canard milouin<small>Mâle &amp; femelle — canard plongeur</small></figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/fuligule_nyroca.jpg" alt="Fuligule nyroca">
+        <figcaption class="caption">Fuligule nyroca<small>Mâle — « Niroca »</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/canard_pilet.jpg" alt="Canard pilet">
+        <figcaption class="caption">Canard pilet<small>Mâle &amp; femelle — le cou le plus long des canards</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/bernache_rousseatre.jpg" alt="Bernache roussâtre">
+        <figcaption class="caption">Bernache roussâtre<small>Femelle &amp; jeune — « Brante roussâtre »</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/canard_siffleur.jpg" alt="Canard siffleur">
+        <figcaption class="caption">Canard siffleur<small>Mâle — « Badorne »</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="images/macreuse_brune.jpg" alt="Macreuse brune">
+        <figcaption class="caption">Macreuse brune<small>Femelle — canard marin des côtes</small></figcaption>
+      </figure>
+
+    </div>
+
+    <div class="fact">
+      <span class="label">LE SAVIEZ-VOUS&nbsp;?</span>
+      <p>La sarcelle d'hiver est le plus petit canard d'Europe&nbsp;: elle pèse à peine 300 grammes,
+      l'équivalent de deux pommes&nbsp;!</p>
+    </div>
+
+    <p class="credits">Photos des espèces&nbsp;: Wikimedia Commons (Wikimedia Foundation) — images sous licence libre.</p>
+
+    <footer>
+      <span>Tous ces oiseaux sont des <strong>espèces protégées</strong> en France. Préserver les étangs et les zones humides, c'est protéger les oiseaux d'eau.</span>
+      <span class="iucn">
+        <span>Statuts UICN&nbsp;:</span>
+        <span class="code lc">LC</span><span class="code nt">NT</span><span class="code vu">VU</span>
+      </span>
+    </footer>
+
+  </div>
+</div>
+</body>
+</html>
